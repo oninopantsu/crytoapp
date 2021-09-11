@@ -1,0 +1,37 @@
+<template>
+  <div class="home">
+    <Products />
+  </div>
+</template>
+
+<script>
+import Products from '../components/Products.vue';
+
+export default {
+  data(){
+    return {
+      lists: [
+        {
+          name: "BTC"
+        }
+      ]
+    };
+  },
+  components: {
+    Products
+  }
+};
+</script>
+
+<style scoped>
+body {
+  background-color: #fff;
+
+}
+img {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+</style>
