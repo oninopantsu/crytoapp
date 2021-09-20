@@ -6,19 +6,55 @@
     <label for="password">password</label>
     <input type="password" id="password" v-model="password">
     <br>
-    <button type="submit">ログイン</button>
+    <button @click="logIn">ログイン</button>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase/app';
 export default {
   data(){
     return{
       email: '',
       password: ''
-    };
-  }
-};
+    }
+  },
+  methods: {
+    logIn(){
+      if(!this.email || !this.password){
+        alert('メールアドレスまたはパスワードが入力されていません')
+        return
+      }
+      firebase
+      .auth()
+      .signInWithEmailAndPassword(this.email,this.password)
+      .then(()=>{
+        alert('ログインが完了しました')
+        this.$router.push("/Home")
+        })
+      
+      .catch((error)=>{
+        switch(error.code){
+          case 'auth/invalid-email':
+            alert('メールアドレスの形式が違います。')
+            break
+            case 'auth/user-disabled':
+              alert('ユーザーが無効です')
+              break
+              case 'auth/user0not-found':
+                alert('ユーザーが存在しません')
+                break
+                case 'auth/wrong-password':
+                  alert('パスワードが間違っております')
+                  break
+                default:
+                  alert('エラー発生中！コーヒーでも飲んでお待ちください')
+                  break
+        }
+    })
+  },
+},
+}
 </script>
 
 <style scoped>

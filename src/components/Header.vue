@@ -1,24 +1,39 @@
 <template>
   <header>
     <div class="title">
-      <h1 class="header-logo">Cry to App</h1>
+      <h1> {{ message }} </h1>
       <ul class="nav-flex">
-        <li><a href="/">トップページへ</a> </li>
-        <li><a href="./Top.vue">ログアウト</a> </li>
+        <li>
+          <router-link to="/login">Login</router-link>
+        </li>
+        <li>
+      <router-link to="/login">Logout</router-link>
+        </li>
       </ul>
     </div>
     <div class="menu-contents">
       <ul>
         <li>
-          <a href="./Top.vue">トップページへ</a>
+          <router-link to="/login">login</router-link>
         </li>
         <li>
-          <a href="./Top.vue">ログアウト</a>
+      <router-link to="/login">logout</router-link>
         </li>
       </ul>
+      <router-view />
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: 'cry to app'
+    }
+  }
+}
+</script>
 
 <style scoped>
 
@@ -39,6 +54,11 @@ header {
   padding-left: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+  @media screen and(max-width:400px) {
+  .header-logo {
+    font-size: 18px;
+  }
+  }
 @media screen and(max-width:480px) {
   .header-logo{
     font-size: 12px;
@@ -54,7 +74,7 @@ header {
   padding-left: 10px;
   padding-right: 20px;
   list-style: none;
-  font-size: 12px;
+  font-size: 18px;
 }
 @media screen and(max-width:480px) {
   .nav-flex li{
@@ -65,7 +85,8 @@ header {
    
 a {
   text-decoration: none;
-  color: #bbb;
+  color: white;
+  font-weight: bold;
 
 }
 a:hover {

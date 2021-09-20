@@ -1,3 +1,0 @@
-<template>
-.home flex
-</template>

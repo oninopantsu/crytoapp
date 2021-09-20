@@ -2,23 +2,63 @@
   <div class="content-wrapper">
     <div class="products-content">
       <div class="products-title">
-       <p>現物取引</p> 
+       <p> {{ message }}</p> 
       <ul>
-        <li><img src="../assets/BTC.png" alt="">BTC
+        <li><img src="../assets/BTC.png" alt=""><a @click="$router,push({name:'About',params: {list:list}})"> BTC
           <br>
-        <span>ビットコイン</span> 
+        <span>{{ name }} </span> </a> 
+        </li>
+        <li><img src="../assets/ETH.png" alt="">ETH
+          <br>
+        <span>イーサリアム</span> 
+        </li>
+        <li><img src="../assets/BCH.png" alt="">BCH
+          <br>
+        <span>ビットコインキャッシュ</span> 
+        </li>
+        <li><img src="../assets/LTC.png" alt="">LTC
+          <br>
+        <span>ライトコイン</span> 
+        </li>
+        <li><img src="../assets/XRP.png" alt="">XRP
+          <br>
+        <span>リップル</span> 
+        </li>
+        <li><img src="../assets/XEM.png" alt="">XEM
+          <br>
+        <span>ネム</span> 
         </li>
       </ul>
       </div>
 
       <div class="products-title-l"> 
-        <p>レバレッジ取引</p>
+        <p> {{message2}} </p>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <li>
+          <img src="../assets/BTC.png" alt="">BTC_JPY
+          <br>
+        <span>ビットコイン（円）</span> 
+        </li>
+        <li>
+          <img src="../assets/ETH.png" alt="">ETH_JPY
+          <br>
+        <span>イーサリアム（円）</span> 
+        </li>
+        <li>
+          <img src="../assets/BCH.png" alt="">BCH_JPY
+          <br>
+        <span>ビットコインキャッシュ（円）</span> 
+        </li>
+        <li>
+          <img src="../assets/LTC.png" alt="">LTC_JPY
+          <br>
+        <span>ライトコイン（円）</span> 
+        </li>
+        <li>
+          <img src="../assets/XRP.png" alt="">XRP_JPY
+          <br>
+        <span>リップル（円）</span> 
+        </li>
           </ul>
       </div>
     </div>
@@ -26,27 +66,37 @@
   </div>
 </template>
 
-
 <script>
+
 export default {
-    props:["name" ]
+  data() {
+    return{
+      message: "現物取引",
+      message2: "レバレッジ取引"
+    }
+  },
+  props:["name"]
+
 };
 </script>
 
+
 <style scoped>
 div {
-  background-color: #fff;
   width: 100%;
+  margin-bottom: 30px;
 }
 .products-content {
+  background-color: #fff;
   width: 80%;
-  margin: 80px auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-evenly;
   
 }
 .products-title{
   width: 40%;
+  margin: 80px;
 }
 .products-title p {
   font-size: 12px;
@@ -59,24 +109,36 @@ div {
   padding: 10px 10px;
 }
 img {
-  width: 4%;
-  padding-right: 6px;
+  width: 12%;
+  padding-right: 18px;
   vertical-align: middle;
 
+}
+.content-wrapper ul  {
+  margin-top: 20px;
 }
 .content-wrapper ul li {
   list-style: none;
   font-size: 18px;
+  text-align: center;
+  padding: 10px;
 }
 span{
   font-size: 12px;
 }
 .products-title-l {
   width: 40%;
+  margin: 80px;
   }
 .products-title-l p{
   background-color: rgba(29, 196, 249, 0.31);
   border-radius: 20px 0 20px 0;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 10px;
+
 
 }
 </style>

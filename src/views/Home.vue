@@ -1,27 +1,39 @@
 <template>
   <div class="home">
     <Products />
-    <!-- <Products v-for="(data,index) in lists" :key="index" :name="data.name" /> -->
-  </div>
+  </div> 
 </template>
 
 <script>
 import Products from '../components/Products.vue';
-
 export default {
   data(){
-    return {
-      lists: [
+    return{
+      lists:[
         {
-          name: "BTC"
+          symbol: "BTC"
         },
+        {
+          symbol: "LTC"
+        },
+        {
+          symbol: "XEM"
+        },
+        {
+          symbol: "LTC"
+        },
+       { 
+          symbol: "XRP"
+        }
       ]
-    };
+    }
   },
-  components: {
-    Products
+  components:{
+    Products,
   }
-};
+}
+
+
 </script>
 
 <style scoped>
