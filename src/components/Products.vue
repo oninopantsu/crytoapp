@@ -82,6 +82,7 @@ export default {
 
 
 <style scoped>
+
 div {
   width: 100%;
   margin-bottom: 30px;
@@ -150,4 +151,35 @@ span{
 .products-title-l a{
   cursor: pointer;
 }
+  @media screen and (max-width:480px) {
+    .products-title{
+    width: 40%;
+    margin: 20px;
+  }
+    .products-content {
+    display: flex;
+  }
+  .products-title p {
+    font-size: 8px;
+  }
+  .products-title-l p{
+    font-size: 8px;
+
+  }
+  .products-title-l {
+  width: 40%;
+  margin: 20px;
+  }
+  img {
+    width: 20%;
+  }
+  .products-title-l a{
+  font-size: 0.6rem;
+}
+  .products-title a{
+  font-size: 0.8rem;
+}
+
+  
+  }
 </style>

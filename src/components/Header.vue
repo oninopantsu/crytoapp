@@ -4,34 +4,33 @@
       <h1> {{ message }} </h1>
       <ul class="nav-flex">
         <li>
-          <router-link to="/login">Login</router-link>
+          <router-link to="/login" @isLoggedIn="handleShow" @isLogout="handleShow">Login</router-link>
+          <router-link to="/Home" v-show="showHome">Home</router-link>
         </li>
         <li>
       <router-link to="/login">Logout</router-link>
         </li>
       </ul>
     </div>
-    <div class="menu-contents">
-      <ul>
-        <li>
-          <router-link to="/login">login</router-link>
-        </li>
-        <li>
-      <router-link to="/login">logout</router-link>
-        </li>
-      </ul>
-      <router-view />
-    </div>
   </header>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      message: 'cry to app'
+  data(){
+    return{
+      message: 'cry to app',
+      showHome: false
+
     }
-  }
+    
+  },
+    methods: {
+      isActive(){
+        this.isActive = !this.isActive
+
+      }
+    }
 }
 </script>
 
@@ -54,17 +53,6 @@ h1 {
   padding-left: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-  @media screen and(max-width:400px) {
-  .header-logo {
-    font-size: 18px;
-  }
-  }
-@media screen and(max-width:480px) {
-  .header-logo{
-    font-size: 12px;
-  }
-}
-  
 .nav-flex {
   display: flex;
   flex-direction: row;
@@ -75,11 +63,6 @@ h1 {
   padding-right: 20px;
   list-style: none;
   font-size: 18px;
-}
-@media screen and(max-width:480px) {
-  .nav-flex li{
-    display: none;
-  }
 }
 
    
@@ -93,18 +76,11 @@ a:hover {
   color: blue;
   cursor: pointer;
 }
-.menu-contents {
-  display: none;
-  background-color: teal;
-}
+
 @media screen and(max-width:480px) {
-  .menu-contents{
-    display: block;
-  }
-    .menu-contents ul li{
-      list-style: none;
-    }
-  
+h1 {
+  font-size: 12px;
+}
 }
 
 </style>

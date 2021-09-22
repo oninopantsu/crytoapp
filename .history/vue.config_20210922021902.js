@@ -1,2 +1,0 @@
-
-VueElement.config.js
