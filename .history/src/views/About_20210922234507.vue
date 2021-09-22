@@ -1,0 +1,52 @@
+<template>
+  <div id="about">
+    <h1> {{ symbol }} </h1>
+    <div class="coin-contents">
+      <p>取引最終価格</p>
+    <p > {{ last }} </p> 
+    <p> {{ timestamp }} </p>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data(){
+    return{
+      symbol: "",
+      last: "",
+      timestamp: ""
+    };
+  },
+    async created() {
+      const item = await axios
+        .get("https://api.coin.z.com/public/v1/ticker/")
+        .then(response => (this.info = response.data.bpi))
+        .catch(error => console.log(error));
+        const coinData = item;
+        this.symbol = coinData.symbol;
+        this.last = coinData.last;
+        this.timestamp = coinData.timestamp;
+    },
+}
+</script>
+
+
+
+
+
+<style scoped>
+#about {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+
+}
+</style>
+
