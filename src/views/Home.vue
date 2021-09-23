@@ -15,34 +15,35 @@ export default {
     return{
       lists: [
         {
-          name:"BTC"
+          symbol:"BTC",
+          
         },
         {
-          name:"ETH"
+          symbol:"ETH"
         },
         {
-          name:"BCH"
+          symbol:"BCH"
         },
         {
-          name:"LTC"
+          symbol:"LTC"
         },
         {
-          name:"XRP"
+          symbol:"XRP"
         },
         {
-          name:"XEM"
+          symbol:"XEM"
         },
         {
-          name:"BTC_JPY"
+          symbol:"BTC_JPY"
         },
         {
-          name:"ETH_JPY"
+          symbol:"ETH_JPY"
         },
         {
-          name:"LTC_JPY"
+          symbol:"LTC_JPY"
         },
         {
-          name:"XRP_JPY"
+          symbol:"XRP_JPY"
         },
       ]
     }

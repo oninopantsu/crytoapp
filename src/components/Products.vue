@@ -4,10 +4,10 @@
       <div class="products-title">
        <p> {{ message }}</p> 
       <ul>
-        <li><img src="../assets/BTC.png" alt=""><a @click="$router.push({name:'About', params: { symbol:symbol }})"> 
-         BTC </a> 
+        <li><img src="../assets/BTC.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})"> 
+       BTC </a> 
           <br>
-        <span>ビットコイン</span>
+        <span>ビットコイン </span>
         </li>
         <li><img src="../assets/ETH.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})"> ETH</a>
           <br>
@@ -25,7 +25,7 @@
           <br>
         <span>リップル</span> 
         </li>
-        <li><img src="../assets/XEM.png" alt=""><a @click="$router.push({name:'About', params: { symbol:symbol }})">XEM</a>
+        <li><img src="../assets/XEM.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">XEM</a>
           <br>
         <span>ネム</span> 
         </li>
