@@ -1,8 +1,8 @@
 <template>
   <div class="home">
   
-    <Products  />
-  </div> 
+<Products /> 
+</div> 
 </template>
 
 <script>
@@ -13,42 +13,9 @@ export default {
   },
   data(){
     return{
-      lists: [
-        {
-          symbol:"BTC",
-          
-        },
-        {
-          symbol:"ETH"
-        },
-        {
-          symbol:"BCH"
-        },
-        {
-          symbol:"LTC"
-        },
-        {
-          symbol:"XRP"
-        },
-        {
-          symbol:"XEM"
-        },
-        {
-          symbol:"BTC_JPY"
-        },
-        {
-          symbol:"ETH_JPY"
-        },
-        {
-          symbol:"LTC_JPY"
-        },
-        {
-          symbol:"XRP_JPY"
-        },
-      ]
     }
   }
-}
+};
 
 
 </script>

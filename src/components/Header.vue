@@ -4,8 +4,8 @@
       <h1> {{ message }} </h1>
       <ul class="nav-flex">
         <li>
-          <!-- <router-link to="/login" @isLoggedIn="handleShow" @isLogout="handleShow">Login</router-link> -->
-          <!-- <router-link to="/Home" v-show="showHome">Home</router-link> -->
+          <router-link to="/login" @isLoggedIn="handleShow" @isLogout="handleShow">Login</router-link>
+          <router-link to="/Home" v-show="showHome">Home</router-link>
         </li>
         <li>
       <router-link to="/login">Logout</router-link>
@@ -14,6 +14,7 @@
     </div>
   </header>
 </template>
+
 
 <script>
 export default {

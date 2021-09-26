@@ -1,8 +1,10 @@
 module.exports = {
+  publicPath:'./',
+
   devServer: {
     proxy: {
     "/public/"  :{
-      target:"http://api.coin.z.com", 
+      target:"https://api.coin.z.com", 
       },
     },
   },

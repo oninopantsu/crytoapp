@@ -2,65 +2,27 @@
   <div class="content-wrapper">
     <div class="products-content">
       <div class="products-title">
-       <p> {{ message }}</p> 
-      <ul>
-        <li><img src="../assets/BTC.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})"> 
-       BTC </a> 
-          <br>
-        <span>ビットコイン </span>
-        </li>
-        <li><img src="../assets/ETH.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})"> ETH</a>
-          <br>
-        <span>イーサリアム</span> 
-        </li>
-        <li><img src="../assets/BCH.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">BCH</a>
-          <br>
-        <span>ビットコインキャッシュ</span> 
-        </li>
-        <li><img src="../assets/LTC.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">LTC</a>
-          <br>
-        <span>ライトコイン</span> 
-        </li>
-        <li><img src="../assets/XRP.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">XRP</a>
-          <br>
-        <span>リップル</span> 
-        </li>
-        <li><img src="../assets/XEM.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">XEM</a>
-          <br>
-        <span>ネム</span> 
-        </li>
-      </ul>
+       <p> {{ message }}</p>
+       <ul>
+         <div v-for="list in lists" :key=list.id>
+           <Coin :coinName="{
+             name: list.name,
+             symbol: list.symbol,
+           }" />
+           </div>
+           </ul>
       </div>
 
       <div class="products-title-l"> 
         <p> {{message2}} </p>
-          <ul>
-        <li>
-          <img src="../assets/BTC.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">BTC_JPY</a>
-          <br>
-        <span>ビットコイン（円）</span> 
-        </li>
-        <li>
-          <img src="../assets/ETH.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">ETH_JPY</a>
-          <br>
-        <span>イーサリアム（円）</span> 
-        </li>
-        <li>
-          <img src="../assets/BCH.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">BCH_JPY</a>
-          <br>
-        <span>ビットコインキャッシュ（円）</span> 
-        </li>
-        <li>
-          <img src="../assets/LTC.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">LTC_JPY</a>
-          <br>
-        <span>ライトコイン（円）</span> 
-        </li>
-        <li>
-          <img src="../assets/XRP.png" alt=""><a @click="$router.push({name:'About', params: { name:name }})">XRP_JPY</a>
-          <br>
-        <span>リップル（円）</span> 
-        </li>
-          </ul>
+       <ul>
+         <div v-for="list in lists2" :key=list.id>
+           <Coin2 :coinName="{
+             name: list.name,
+             symbol: list.symbol,
+           }" />
+           </div>
+           </ul>
       </div>
     </div>
     
@@ -69,14 +31,70 @@
 </template>
 
 <script>
-
-export default {
+import Coin from "./molecules/Coin.vue";
+import Coin2 from "./molecules/Coin2.vue";
+export default {  
   data() {
     return{
-      message: "現物取引",
-      message2: "レバレッジ取引",
+  lists:[
+    {
+    name:"ビットコイン",
+    symbol: "BTC",
+    },
+    {
+    name:"イーサリアム",
+    symbol: "ETH"
+
+    },
+    {
+    name:"ビットコインキャッシュ",
+    symbol: "BCH"
+    },
+    {
+    name:"ライトコイン",
+    symbol: "LTC"
+    },
+    {
+    name:"リップル",
+    symbol: "XRP"
+    },
+    {
+    name:"ネム",
+    symbol: "XEM"
+    },
+  ],
+  lists2:[
+    {
+    name:"ビットコイン(円)",
+    symbol: "BTC"
+    },
+    {
+    name:"イーサリアム(円)",
+    symbol: "ETH"
+    },
+    {
+    name:"ビットコインキャッシュ",
+    symbol: "BCH"
+    },
+    {
+    name:"ライトコイン(円)",
+    symbol: "LTC"
+    },
+    {
+    name:"リップル(円)",
+    symbol: "XRP"
+    },
+  ],
+    message: "現物取引",
+    message2: "レバレッジ取引",
     }
   },
+    components: {
+      Coin,
+      Coin2,
+    },
+
+  
 };
 </script>
 
@@ -171,7 +189,7 @@ span{
   margin: 20px;
   }
   img {
-    width: 20%;
+    width: 10%;
   }
   .products-title-l a{
   font-size: 0.6rem;
