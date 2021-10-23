@@ -16,16 +16,13 @@ import axios from "axios";
 export default {
     data(){
       return{
-        info: "",
+        info: null,
       };
     },
     async created() {
       await axios
-        .get(`/public/v1/ticker?symbol=BTC`,{
-          params:{
-            info: '',
-          },
-        })
+        .get(`/public/v1/ticker?symbol=`
+        )
         .then((response) => {
           this.info = response.data.data[0];
           console.log(this.info);

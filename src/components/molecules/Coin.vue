@@ -1,7 +1,7 @@
 <template>
   <li>
     <img :src="url" alt="">
-    <a @click="$router.push({name:'About'})" class="title">
+    <a @click="$router.push({name:'About', params:{coinName:symbol}})" class="title">
       {{ this.coinName.symbol }}
       </a>
       <br><span class="subtitle">{{ this.coinName.name }}</span>
@@ -34,6 +34,10 @@ a {
   cursor:pointer;
 }
   @media screen and (max-width:480px) {
+  li{
+    width: 40%;
+    margin: 20px;
+  }
   .title {
     font-size: 12px;
   }

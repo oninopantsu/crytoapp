@@ -1,7 +1,7 @@
 <template>
   <li>
     <img :src="url" alt="">
-    <a @click="$router.push({name:'About' })" class="title">
+    <a @click="$router.push({name:'About', params:{coinName:symbol}})" class="title">
       {{ this.coinName.symbol }}_JPY
       </a>
       <br><span class="subtitle">{{ this.coinName.name }}</span>
