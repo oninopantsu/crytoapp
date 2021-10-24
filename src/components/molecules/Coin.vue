@@ -1,7 +1,7 @@
 <template>
   <li>
     <img :src="url" alt="">
-    <a @click="$router.push({name:'About', params:{coinName:symbol}})" class="title">
+    <a @click="$router.push({ path: `/about/${this.coinName.symbol}` })" class="title">
       {{ this.coinName.symbol }}
       </a>
       <br><span class="subtitle">{{ this.coinName.name }}</span>
@@ -23,7 +23,7 @@ export default {
       url: require('../../assets/' + this.coinName.symbol + '.png'),
     };
   },
-  mouted(){
+  mounted(){
     console.log(this.coinName);
   },
 }

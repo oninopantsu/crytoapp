@@ -1,12 +1,12 @@
 <template>
-  <div id="about">
+  <div class="about">
     <h1> {{ info.symbol }} </h1>
     <div class="coin-contents">
       <p class="title">取引最終価格</p>
-    <p class="last"> {{ info.last }} </p> 
-    <p class="time"> {{ info.timestamp }} </p>
+      <p class="last"> {{ info.last }} </p> 
+      <p class="time"> {{ info.timestamp }} </p>
     </div>
-   <router-link to="/" class="home">Home</router-link>
+    <router-link to="/" class="home">Home</router-link>
   </div>
 
 </template>
@@ -16,12 +16,12 @@ import axios from "axios";
 export default {
     data(){
       return{
-        info: null,
+        info: "",
       };
     },
-    async created() {
+    async mounted() {
       await axios
-        .get(`/public/v1/ticker?symbol=`
+        .get(`/public/v1/ticker?symbol=${this.$route.params.name}`
         )
         .then((response) => {
           this.info = response.data.data[0];
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-#about {
+.about {
   width: 80%;
   background: #fff;
   margin: 0 auto;
