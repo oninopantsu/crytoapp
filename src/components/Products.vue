@@ -4,7 +4,7 @@
       <div class="products-title">
        <p> {{ message }}</p>
        <ul>
-         <div v-for="list in lists" :key=list.id>
+         <div v-for="list in lists" :key=list.symbol>
            <Coin :coinName="{
              name: list.name,
              symbol: list.symbol,
@@ -16,7 +16,7 @@
       <div class="products-title-l"> 
         <p> {{message2}} </p>
        <ul>
-         <div v-for="list in lists2" :key=list.id>
+         <div v-for="list in lists2" :key=list.symbol>
            <Coin2 :coinName="{
              name: list.name,
              symbol: list.symbol,
@@ -66,23 +66,23 @@ export default {
   lists2:[
     {
     name:"ビットコイン(円)",
-    symbol: "BTC"
+    symbol: "BTC_JPY"
     },
     {
     name:"イーサリアム(円)",
-    symbol: "ETH"
+    symbol: "ETH_JPY"
     },
     {
     name:"ビットコインキャッシュ",
-    symbol: "BCH"
+    symbol: "BCH_JPY"
     },
     {
     name:"ライトコイン(円)",
-    symbol: "LTC"
+    symbol: "LTC_JPY"
     },
     {
     name:"リップル(円)",
-    symbol: "XRP"
+    symbol: "XRP_JPY"
     },
   ],
     message: "現物取引",

@@ -10,7 +10,7 @@ const config = {
   projectId: "cry-to-app",
   storageBucket: "cry-to-app.appspot.com",
   messagingSenderId: "241969306028",
-  appId: "1:241969306028:web:287e1edda722907b0cc209",
+  appId:  "1:241969306028:web:287e1edda722907b0cc209",
   measurementId: "G-2GPZYH2JJL"
 };
 
@@ -18,5 +18,5 @@ firebase.initializeApp(config);
 
 const app = createApp(App);
 app.use(router);
-app.mount("#app");
+app.mount('#app');
 

@@ -3,7 +3,7 @@
     <h1> {{ info.symbol }} </h1>
     <div class="coin-contents">
       <p class="title">取引最終価格</p>
-    <p class="last"> {{ info.last }} </p> 
+    <p class="last"> {{ info.last | toLocaleStrings }} </p> 
     <p class="time"> {{ info.timestamp }} </p>
     </div>
    <router-link to="/" class="home">Home</router-link>
@@ -16,19 +16,19 @@ import axios from "axios";
 export default {
     data(){
       return{
-        info: null,
+        info: "",
       };
     },
-    async created() {
+    async mounted() {
       await axios
-        .get(`/public/v1/ticker?symbol=`
-        )
+        .get(`/public/v1/ticker?symbol=${this.$route.params.name}`)
         .then((response) => {
           this.info = response.data.data[0];
           console.log(this.info);
         })
         .catch(error => console.log(error));
     },
+
 };
 </script>
 
@@ -66,6 +66,9 @@ h1 {
   color: black;
   text-decoration: none;
 }
-
-
+@media screen and(max-width:480px) {
+.title {
+  font-size: 8px;
+}
+}
 </style>

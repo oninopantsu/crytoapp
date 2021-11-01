@@ -1,8 +1,8 @@
 <template>
   <li>
     <img :src="url" alt="">
-    <a @click="$router.push({name:'About', params:{coinName:symbol}})" class="title">
-      {{ this.coinName.symbol }}_JPY
+    <a @click="$router.push({ path: `/about/${this.coinName.symbol}`})" class="title">
+      {{ this.coinName.symbol }}
       </a>
       <br><span class="subtitle">{{ this.coinName.name }}</span>
   </li>
@@ -18,12 +18,12 @@ export default {
       url: String
     }
   },
-  data(){
+data(){
     return {
-      url: require('../../assets/' + this.coinName.symbol + '.png'),
+      url: require('../../assets/' + this.coinName.symbol + '.png')
     };
-  },
-  mouted(){
+      },
+  mounted(){
     console.log(this.coinName);
   },
 }

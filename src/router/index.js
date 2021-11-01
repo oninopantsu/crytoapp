@@ -13,9 +13,10 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
+    path: "/about/:name",
     name: "About",
     component: About,
+    props:true,
   },
   {
     path: "/register",
@@ -54,7 +55,7 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else {
-    next();// next() を常に呼び出すようにしてください!
+    next();
   }
 })
 
