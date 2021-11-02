@@ -3,7 +3,7 @@
     <h1> {{ info.symbol }} </h1>
     <div class="coin-contents">
       <p class="title">取引最終価格</p>
-    <p class="last"> {{ info.last | toLocaleStrings }} </p> 
+    <p class="last"> {{ info.last }} </p> 
     <p class="time"> {{ info.timestamp }} </p>
     </div>
    <router-link to="/" class="home">Home</router-link>
